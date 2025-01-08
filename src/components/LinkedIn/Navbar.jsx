@@ -30,18 +30,18 @@ function Navbar({ profileSrc }) {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-50 border-b border-gray-200 shadow-sm z-50">
-      <div className="w-[90vw]  mx-auto flex justify-between items-center px-4 py-3">
+    <nav className="fixed top-0 w-full bg-[#f9f9f9] border-b border-gray-200 shadow-sm z-50">
+      <div className="w-[100vw] sm:w-[90vw]  mx-auto flex justify-between items-center px-2 sm:px-4 py-3">
         {/* Logo */}
-        <div className="items-center hidden sm:flex">
+        <div className="items-center flex">
           <img src={Logo} alt="LinkedIn Logo" className="h-10" />
         </div>
 
         {/* Search Box */}
-        <div className="hidden lg:flex relative w-[30%] sm:w-[100%] md:w-[40%]">
-          <form className="flex items-center bg-gray-100 border border-gray-300 rounded-md px-3 py-1 w-full">
+        <div className="lg:flex relative w-[40%] border rounded-lg">
+          <form className="flex items-center bg-gray-100 border border-none sm:border-gray-300 rounded-md px-3 py-1 w-full">
             <FontAwesomeIcon icon={faSearch} className="text-gray-500" />
-            <input type="text" placeholder="Search for something..." className="hidden md:block bg-transparent focus:outline-none w-full text-sm pl-2 py-1" value={searchQuery} onChange={handleSearch} autoComplete="off"/>
+            <input type="text" placeholder="Search for something..." className="hidden md:block bg-transparent focus:outline-none w-full text-sm pl-2 py-1" value={searchQuery} onChange={handleSearch} autoComplete="off" />
           </form>
           {searchResults.length > 0 && (
             <div className="absolute top-6 bg-white border border-gray-300 rounded-md shadow-md mt-2 w-full z-10">
@@ -57,18 +57,18 @@ function Navbar({ profileSrc }) {
         </div>
 
         {/* Navigation Items  [home, message, network, jobs.....] */}
-        <ul className="flex items-center space-x-8">
+        <ul className="w-[70%] sm:w-[40%] flex justify-between items-center">
           {navItems.map((item, index) => (
             <li key={index} className="flex flex-col items-center text-gray-500 hover:text-blue-600 text-xs font-medium transition">
-              <NavLink to={item.path} className="flex flex-col items-center">
+              <NavLink to={item.path} className={(e) => `${e.isActive ? "text-black scale-105" : ""} flex flex-col items-center`}>
                 <FontAwesomeIcon icon={item.icon} className="text-lg mb-1" />
                 <span className="hidden md:inline">{item.name}</span>
               </NavLink>
             </li>
           ))}
-          <li>
-            <a href="#" className="flex flex-col items-center text-gray-500 hover:text-blue-600 text-xs font-medium transition">
-              <img src={profileSrc} alt="Profile" className="w-8 h-8 rounded-full object-cover"/>
+          <li className="hidden sm:block">
+            <a href="#" className="sm:flex flex-col items-center text-gray-500 hover:text-blue-600 text-xs font-medium transition">
+              <img src={profileSrc} alt="Profile" className="w-8 h-8 rounded-full object-cover" />
               <span>Me</span>
             </a>
           </li>

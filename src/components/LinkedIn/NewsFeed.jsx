@@ -58,6 +58,17 @@ function NewsFeed({ profileSrc }) {
             showReactions: false,
             post: saphalPost,
             imgSrc: saphalImg
+        },
+        {
+            id: 104,
+            name: "Dipesh Malla",
+            position: "Software engineer | React JS",
+            publishedDate: "2 days ago",
+            caption: "Do you want to be a great pentester? Start downloading some open source applications and analyzing the code for key application functionality that you, as a pentester, would want to try and exploit during a web application pentest. If you analyze enough applications you will eventually see most of the ways these functions are created, which would give you some understanding for why an application behaves the way it does during a real engagement.",
+            like: 0,
+            showReactions: false,
+            post: "",
+            imgSrc: dipeshImg
         }
     ]);
 
@@ -75,15 +86,15 @@ function NewsFeed({ profileSrc }) {
     };
 
     return (
-        <div className="w-full max-w-screen-sm mx-auto p-1 md:p-4 bg-[#f9f9f9] rounded-lg shadow-lg">
+        <div className="w-full max-w-screen-sm mx-auto rounded-lg">
             {/* Post creation box */}
             <div className="w-full p-4 border border-[#e0e0e0] rounded-lg bg-white shadow-md">
-                <div className="flex items-center border w-full">
+                <div className="flex items-center border w-full p-3 rounded-lg">
                     <div className="flex-shrink-0">
                         <img src={profileSrc} alt="Your Profile" className="w-12 h-12 rounded-full border-2 border-[#0073b1]"/>
                     </div>
                     <div className="flex-grow ml-3 w-full">
-                        <a href="#" className="w-[60%] text-[#0073b1] font-medium px-4 py-2 rounded border-2 border-[#e0e0e0]">Start a post</a>
+                        <a href="#" className="w-full flex text-[#0073b1] font-medium px-4 py-2 rounded-3xl border border-1 border-[#e0e0e0]">Start a post</a>
                     </div>
                 </div>
                 {/* type of media */}
@@ -116,9 +127,9 @@ function NewsFeed({ profileSrc }) {
                             </div>
                         </div>
                         <p className="text-[#444] text-sm mb-3">{user.caption}</p>
-                        <div className="mb-3">
+                        {user.post && (<div className="mb-3">
                             <img src={user.post} alt={user.name} className="w-full h-auto rounded-lg" />
-                        </div>
+                        </div>)}
                         <div className="flex justify-around text-[#666]">
                             <div className="flex items-center gap-2 cursor-pointer relative"
                                 onMouseEnter={() => handleReactionBox(index, true)}

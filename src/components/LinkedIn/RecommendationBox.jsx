@@ -21,7 +21,7 @@ const RecommendationBox = () => {
   ];
 
   return (
-    <div className="hidden md:w-[40vw] md:block h-[fit-content] border border-[#ddd] rounded-lg p-4 bg-white font-sans">
+    <div className="hidden md:w-[40vw] md:block h-[fit-content] rounded-lg p-4 bg-white font-sans border border-1 border-[#dfdeda]">
       <h4 className="mb-4 text-[16px] font-semibold text-[#333]">Add to your feed</h4>
       <div className="mb-4">
         {recommendations.map((person, index) => (

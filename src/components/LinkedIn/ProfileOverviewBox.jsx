@@ -8,7 +8,7 @@ function ProfileOverviewBox({ profileSrc }) {
     };
 
     return (
-        <div className="hidden lg:w-[40vw] lg:block h-[fit-content] bg-[#f9f9f9] rounded-lg shadow-[0_4px_8px_rgba(0,0,0,0.1)] p-4 text-center font-sans overflow-hidden">
+        <div className="hidden lg:w-[40vw] lg:block h-[fit-content] bg-white rounded-lg shadow-[0_4px_8px_rgba(0,0,0,0.1)] p-4 text-center font-sans overflow-hidden border border-1 border-[#dfdeda]">
 
             <img src={sanijCover} alt="Cover Picture" className="w-full rounded-lg" />
             <div className="relative top-[-40px] mb-4">
